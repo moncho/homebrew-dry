@@ -1,18 +1,21 @@
-require 'formula'
 require "language/go"
 
+DRY_VERSION= "0.5-alpha.4".freeze
+DRY_COMMIT="0905eeb4d937a019d0bf1b89070e2ebb72f1e0d8".freeze
+
 class Dry < Formula
-  desc "A docker container manager for the terminal"
+  desc "docker container manager for the terminal"
   homepage "https://moncho.github.io/dry/"
-  url "https://github.com/moncho/dry/archive/v0.5-alpha.3.tar.gz"
-  sha256 "44f361216a124f086eebae0f397b094a89fcf39105f1634bf41f61555518698f"
+  url "https://github.com/moncho/dry/archive/v" << DRY_VERSION << ".tar.gz"
+  sha256 "64233e451422d17e3d7c4f79ca4e5e4fae22cbc586c60d12e1fd0436a1579bc1"
   head "https://github.com/moncho/dry.git"
+  version DRY_VERSION
 
   depends_on "go" => :build
 
   go_resource "github.com/moncho/dry" do
     url "https://github.com/moncho/dry.git",
-    :revision => "12acd12c2c9fc24b52758b2805a25147fa9553fa"
+    :revision => DRY_COMMIT
   end
 
   go_resource "github.com/nsf/termbox-go" do
@@ -37,15 +40,13 @@ class Dry < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    mkdir_p buildpath/"src/github.com/dry"
-    ln_s buildpath, buildpath/"src/github.com/dry"
+    mkdir_p buildpath/"src/github.com/moncho/dry"
+    ln_s buildpath, buildpath/"src/github.com/moncho/dry"
     Language::Go.stage_deps resources, buildpath/"src"
-    #system "make", "build"
-    system "go", "build", "-o", "dry", "."
 
-    build_version = File.read("APPVERSION").chomp
+    system "go build -o dry -a -ldflags \"-w -X github.com/moncho/dry/version.GITCOMMIT=#{DRY_COMMIT} -X github.com/moncho/dry/version.VERSION=#{DRY_VERSION} -extldflags -static\" ."
+
     bin.install "dry"
-
   end
 
   test do
