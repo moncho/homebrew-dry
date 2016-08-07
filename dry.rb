@@ -1,13 +1,13 @@
 require "language/go"
 
-DRY_VERSION= "0.5-alpha.4".freeze
-DRY_COMMIT="0905eeb4d937a019d0bf1b89070e2ebb72f1e0d8".freeze
+DRY_VERSION= "0.6-alpha.1".freeze
+DRY_COMMIT="37d40702a63cc154892ab0ca6e6ea6061a70fcd4".freeze
 
 class Dry < Formula
   desc "docker container manager for the terminal"
   homepage "https://moncho.github.io/dry/"
   url "https://github.com/moncho/dry/archive/v" << DRY_VERSION << ".tar.gz"
-  sha256 "64233e451422d17e3d7c4f79ca4e5e4fae22cbc586c60d12e1fd0436a1579bc1"
+  sha256 "af57db73b7b13fa665c2301c2d3d32cc695dcf0fc753261789b6baa6e9740600"
   head "https://github.com/moncho/dry.git"
   version DRY_VERSION
 
