@@ -3,9 +3,9 @@ DRY_VERSION= "0.7-beta.4".freeze
 class Dry < Formula
   desc "docker container manager for the terminal"
   homepage "https://moncho.github.io/dry/"
-  url "https://github.com/moncho/dry/releases/download/v0.7-beta.4/dry-darwin-amd64"
-  version "v0.7-beta.4"
-  sha256 "82f820b2812a11a5f2732118617727ea599303801be6b1e4037f224307089447"
+  url "https://github.com/moncho/dry/releases/download/v0.8-beta.1/dry-darwin-amd64"
+  version "v0.8-beta.1"
+  sha256 "fdf9e7c7257b6b16c22449a974064372aa15728de0ae8a8b5540f226ba762bcb"
 
   def install
     mv "dry-darwin-amd64", "dry"
