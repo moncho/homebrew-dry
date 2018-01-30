@@ -1,11 +1,11 @@
-DRY_VERSION= "v0.9-beta.2".freeze
+DRY_VERSION= "v0.9-beta.3".freeze
 
 class Dry < Formula
   desc "docker container and swarm manager for the terminal"
   homepage "https://moncho.github.io/dry/"
-  url "https://github.com/moncho/dry/releases/download/v0.9-beta.2/dry-darwin-amd64"
-  version "v0.9-beta.2"
-  sha256 "60e694231d2326fc1a353b101be902590f1715f6d5b2a677593979540b7d3a3d"
+  url "https://github.com/moncho/dry/releases/download/v0.9-beta.3/dry-darwin-amd64"
+  version "v0.9-beta.3"
+  sha256 "1b54f44dfd31357fa7e7a7b20e287060c0f3f33ef1341af482798e159dece852"
 
   def install
     mv "dry-darwin-amd64", "dry"
