@@ -1,14 +1,14 @@
-DRY_VERSION= "v0.9-beta.4".freeze
+DRY_VERSION= "v0.9-beta.5".freeze
 
 class Dry < Formula
   desc "a Docker manager for the terminal"
   homepage "https://moncho.github.io/dry/"
-  version "v0.9-beta.4"
+  version "v0.9-beta.5"
   if OS.mac?
-    sha256 "88ac3c6b27a36fabe36f60ac66fbec97932ae7824f1a8ecc82f3ebc25866206f"
+    sha256 "cb2eac99ea7cc9221201aecb49ddc4bba7278d489bd039f315f146e3dc8d5640"
     url "https://github.com/moncho/dry/releases/download/#{version}/dry-darwin-amd64"
   elsif OS.linux?
-    sha256 "9f0a884ea8570295117c4ae0092d1c5025b39ea06c98d9e4f904524d95e94a68"
+    sha256 "29a6db9146f29916e05be9a73a4b4e87c933602505788c4a00de7a6a778c31e8"
     url "https://github.com/moncho/dry/releases/download/#{version}/dry-linux-amd64"
   end
 
