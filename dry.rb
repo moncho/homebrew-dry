@@ -5,21 +5,21 @@
 class Dry < Formula
   desc "A Docker manager for the terminal"
   homepage "https://moncho.github.io/dry/"
-  version "v0.12.1"
+  version "0.13.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/moncho/dry/releases/download/v0.12.1/dry-darwin-amd64.tar.gz"
-      sha256 "a5b639e061e17a3988ef62d7ee550aa3fef5ae3b1b0a3a7346efe2ee75df57de"
+      url "https://github.com/moncho/dry/releases/download/v0.13.0/dry-darwin-amd64.tar.gz"
+      sha256 "144d52f151788953cd06cc7f4b9372bbfb5a0baa10b1a0d0b9d81603ae7f4666"
 
       define_method(:install) do
         bin.install "dry"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/moncho/dry/releases/download/v0.12.1/dry-darwin-arm64.tar.gz"
-      sha256 "55495149289953726c40719df376902442fc17afc92d7def427da11a8df38095"
+      url "https://github.com/moncho/dry/releases/download/v0.13.0/dry-darwin-arm64.tar.gz"
+      sha256 "69c18865b9b96a726ca7491445bb8a7982c3624c30e9bd60fbd0929d16775eb4"
 
       define_method(:install) do
         bin.install "dry"
@@ -29,22 +29,22 @@ class Dry < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moncho/dry/releases/download/v0.12.1/dry-linux-amd64.tar.gz"
-      sha256 "db2b5b3154fa3fad212887a5917a89002468c95faf7bcb00150498a315184e50"
+      url "https://github.com/moncho/dry/releases/download/v0.13.0/dry-linux-amd64.tar.gz"
+      sha256 "6887484abc5a1413f9da8071cf7fefc35fa66e152c49d98f64590b15f8d09e4c"
       define_method(:install) do
         bin.install "dry"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/moncho/dry/releases/download/v0.12.1/dry-linux-armv6.tar.gz"
-      sha256 "61986aa88bc93a650d1dc86832153227cf46eeeaec73f5d706f03979f1e12aa2"
+      url "https://github.com/moncho/dry/releases/download/v0.13.0/dry-linux-armv6.tar.gz"
+      sha256 "10a16207aee09b7f4bcaf329b0f964f6adf7be9ec684727340c097f36d7e1cdc"
       define_method(:install) do
         bin.install "dry"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moncho/dry/releases/download/v0.12.1/dry-linux-arm64.tar.gz"
-      sha256 "ee9100b0c33a4311d79cddd948fe849f93016bba11a9d2b0995cce2024226f8c"
+      url "https://github.com/moncho/dry/releases/download/v0.13.0/dry-linux-arm64.tar.gz"
+      sha256 "cc3863b7ae02a846815846ae833effb08d54aec5bbb2fca56ec26d4ac2c7caf1"
       define_method(:install) do
         bin.install "dry"
       end
